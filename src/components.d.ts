@@ -9,8 +9,16 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     AppFooter: typeof import('./components/AppFooter.vue')['default']
+    DisplaySettings: typeof import('./components/DisplaySettings.vue')['default']
+    Gain: typeof import('./components/Gain.vue')['default']
     HelloWorld: typeof import('./components/HelloWorld.vue')['default']
+    LargeToggleButton: typeof import('./components/LargeToggleButton.vue')['default']
+    RadarScreen: typeof import('./components/RadarScreen.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    StatusLabel: typeof import('./components/StatusLabel.vue')['default']
+    TargetActions: typeof import('./components/TargetActions.vue')['default']
+    ToggleButton: typeof import('./components/ToggleButton.vue')['default']
+    ToogleButton: typeof import('./components/ToogleButton.vue')['default']
   }
 }

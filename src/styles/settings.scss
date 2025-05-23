@@ -5,6 +5,13 @@
  */
 
 // https://vuetifyjs.com/features/sass-variables/`
-// @use 'vuetify/settings' with (
-//   $color-pack: false
-// );
+@forward 'vuetify/settings' with (
+  $layers: true,
+  $color-pack: false,
+  $button-background: #fff434,
+  $button-color: #000000,
+  $button-border-color: #ffffff,
+  $button-border-width: 1px,
+  $button-border-radius: 0,
+  $button-icon-font-size: 2rem,
+);
