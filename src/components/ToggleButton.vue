@@ -1,5 +1,5 @@
 <template>
-  <v-row :class="props.class" :justify="justify">
+  <v-row :class="props.class" :justify="props.justify">
     <v-btn
       :class="btnClass"
       density="compact"
@@ -22,32 +22,20 @@
 
 <script setup lang="ts">
   import { ref } from 'vue';
+  import type { VRow } from 'vuetify/components';
 
-  const props = defineProps({
-    class: {
-      type: String,
-    },
-    height: {
-      type: String,
-    },
-    justify: {
-      type: String,
-      default: 'start',
-      validator (value) {
-        return ['start', 'end', 'center'].includes(value);
-      },
-    },
-    width: {
-      type: String,
-    },
-    variant: {
-      type: String,
-      default: 'full',
-      validator (value) {
-        return ['full', 'compact'].includes(value);
-      },
-    },
-  });
+  type UnwrapReadonlyArray<A> = A extends Readonly<Array<infer I>> ? I : A;
+  type Justify = UnwrapReadonlyArray<VRow['justify']>
+
+  interface ToggleButtonProps {
+    class?: string;
+    height?: string;
+    justify?: Justify;
+    width?: string;
+    variant?: 'full' | 'compact';
+  }
+
+  const props = defineProps<ToggleButtonProps>()
 
   const toggle = ref('A');
   const btnClass = ref('btn-toggle btn-toggle-' + props.variant);

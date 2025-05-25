@@ -28,15 +28,19 @@
 
 <script setup lang="ts">
   import { ref } from 'vue';
+  import type { VRow } from 'vuetify/components';
+
+  type UnwrapReadonlyArray<A> = A extends Readonly<Array<infer I>> ? I : A;
+  type Justify = UnwrapReadonlyArray<VRow['justify']>
 
   interface StatusLabelProps {
-    width: string;
-    justify?: string
-    row?: boolean
+    width?: string;
+    justify?: Justify;
+    row?: boolean;
   }
 
   const props = defineProps<StatusLabelProps>()
-  const justifyAlignment = ref('start')
+  const justifyAlignment = ref<Justify>('start')
   if (props.justify) {
     justifyAlignment.value = props.justify
   }
