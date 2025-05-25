@@ -18,4 +18,4 @@ RUN --mount=type=cache,target=/root/.cache/yarn \
 #======================================================================================#
 FROM nginx:1.27-bookworm AS mariners-eye
 
-COPY --from=frontend /build/dist /var/www/html
+COPY --from=frontend /build/dist /usr/share/nginx/html
