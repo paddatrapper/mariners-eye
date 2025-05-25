@@ -1,5 +1,5 @@
 <template>
-  <v-sheet border class="fill-height" width="300px">
+  <v-sheet border height="220px" width="300px">
     <v-container>
       <v-row>
         <v-col>

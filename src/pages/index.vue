@@ -12,6 +12,8 @@
       </v-col>
       <v-col>
         <TargetActions />
+        <TargetInfo />
+        <AlarmList />
       </v-col>
     </v-row>
   </v-container>
@@ -21,4 +23,6 @@
   import Gain from '@/components/Gain.vue';
   import DisplaySettings from '@/components/DisplaySettings.vue';
   import TargetActions from '@/components/TargetActions.vue';
+  import TargetInfo from '@/components/TargetInfo.vue';
+  import AlarmList from '@/components/AlarmList.vue';
 </script>

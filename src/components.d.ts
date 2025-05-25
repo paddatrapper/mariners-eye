@@ -8,6 +8,7 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
+    AlarmList: typeof import('./components/AlarmList.vue')['default']
     AppFooter: typeof import('./components/AppFooter.vue')['default']
     DisplaySettings: typeof import('./components/DisplaySettings.vue')['default']
     Gain: typeof import('./components/Gain.vue')['default']
@@ -18,6 +19,7 @@ declare module 'vue' {
     RouterView: typeof import('vue-router')['RouterView']
     StatusLabel: typeof import('./components/StatusLabel.vue')['default']
     TargetActions: typeof import('./components/TargetActions.vue')['default']
+    TargetInfo: typeof import('./components/TargetInfo.vue')['default']
     ToggleButton: typeof import('./components/ToggleButton.vue')['default']
     ToogleButton: typeof import('./components/ToogleButton.vue')['default']
   }

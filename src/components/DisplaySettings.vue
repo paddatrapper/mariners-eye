@@ -52,7 +52,6 @@
 <script setup lang="ts">
   import { ref } from 'vue';
   import StatusLabel from './StatusLabel.vue';
-  import TargetActions from './TargetActions.vue';
   import ToggleButton from './ToggleButton.vue';
 
   const orientation = ref('H-UP');
