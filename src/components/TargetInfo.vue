@@ -1,7 +1,7 @@
 <template>
-  <v-sheet border height="120px" width="300px">
+  <v-sheet border height="110px" width="300px">
     <v-container>
-      <v-row>
+      <v-row class="row-target-info">
         <v-col>
           <ToggleButton>RTE</ToggleButton>
         </v-col>
@@ -15,7 +15,7 @@
           <ToggleButton>DF</ToggleButton>
         </v-col>
       </v-row>
-      <v-row>
+      <v-row class="row-target-info">
         <v-col>
           <p>VECTOR</p>
         </v-col>
@@ -23,7 +23,7 @@
           <p>TRAIL</p>
         </v-col>
       </v-row>
-      <v-row>
+      <v-row class="row-target-info">
         <v-col>
           <v-row>
             <v-col>
