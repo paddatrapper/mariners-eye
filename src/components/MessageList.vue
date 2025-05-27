@@ -1,5 +1,5 @@
 <template>
-  <List count />
+  <List />
 </template>
 
 <script lang="ts" setup>

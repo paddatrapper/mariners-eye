@@ -27,9 +27,9 @@
         <v-col>
           <v-row>
             <v-col>
-              <ToggleButton>OFF</ToggleButton>
+              <ToggleButton justify="center">OFF</ToggleButton>
             </v-col>
-            <v-col>
+            <v-col class="target-display-unit">
               <p>m</p>
             </v-col>
           </v-row>
@@ -37,9 +37,9 @@
         <v-col>
           <v-row>
             <v-col>
-              <ToggleButton>OFF</ToggleButton>
+              <ToggleButton justify="center">OFF</ToggleButton>
             </v-col>
-            <v-col>
+            <v-col class="target-display-unit">
               <p>m</p>
             </v-col>
           </v-row>
@@ -47,13 +47,13 @@
       </v-row>
     </v-container>
   </v-sheet>
-  <v-sheet border height="320px" width="300px">
+  <v-sheet border height="300px" width="300px">
     <v-container>
       <v-row justify="center">
-        <h2>ARPA INFO</h2>
+        <h4>ARPA INFO</h4>
       </v-row>
       <v-row>
-        <table v-html="renderTargetTable()" />
+        <table class="target-table" v-html="renderTargetTable()" />
       </v-row>
     </v-container>
   </v-sheet>
@@ -76,11 +76,10 @@
   const targetInfo : TargetInfo[] = [];
 
   function renderTargetTable () : string {
-    let tableHTML = '<table class="target-table">';
     let idRow = '<tr><th>ID</th>';
     let statusRow = '<tr><th>STAT</th>';
     let bearingRow = '<tr><th>BRG</th>';
-    let rangeRow = '<tr><th>RNG</th>';
+    let rangeRow = '<tr><th class="A">RNG</th>';
     let courseRow = '<tr><th>COG</th>';
     let speedRow = '<tr><th>SOG</th>';
     let cpaRow = '<tr><th>CPA</th>';
@@ -91,7 +90,7 @@
       idRow += `<td>${target.id}</td>`;
       statusRow += `<td>${target.status}</td>`;
       bearingRow += `<td>${target.bearing}</td>`;
-      rangeRow += `<td>${target.range}</td>`;
+      rangeRow += `<td class="B">${target.range}</td>`;
       courseRow += `<td>${target.course}</td>`;
       speedRow += `<td>${target.speed}</td>`;
       cpaRow += `<td>${target.closestPointOfApproach}</td>`;
@@ -104,26 +103,26 @@
         idRow += '<td>==</td>';
         statusRow += '<td>===</td>';
         bearingRow += '<td>===</td>';
-        rangeRow += '<td>=.===<td>';
-        courseRow += '<td>===<td>';
-        speedRow += '<td>==.=<td>';
-        cpaRow += '<td>==.=<td>';
-        tcpaRow += '<td>==.=<td>';
-        bcrRow += '<td>==.=<td>';
-        bctRow += '<td>==.=<td>';
+        rangeRow += '<td class="C">=.===</td>';
+        courseRow += '<td>===</td>';
+        speedRow += '<td>==.=</td>';
+        cpaRow += '<td>==.=</td>';
+        tcpaRow += '<td>==.=</td>';
+        bcrRow += '<td>==.=</td>';
+        bctRow += '<td>==.=</td>';
       }
     }
     idRow += '<td></td></tr>';
     statusRow += '<td></td></tr>';
     bearingRow += '<td>°</td></tr>';
-    rangeRow += '<td>NM</td></tr>';
+    rangeRow += '<td class="D">NM</td></tr>';
     courseRow += '<td>°</td></tr>';
     speedRow += '<td>KT</td></tr>';
     cpaRow += '<td>NM</td></tr>';
     tcpaRow += '<td>MIN</td></tr>';
     bcrRow += '<td>NM</td></tr>';
     bctRow += '<td>MIN</td></tr>';
-    tableHTML += idRow;
+    let tableHTML = idRow;
     tableHTML += statusRow;
     tableHTML += bearingRow;
     tableHTML += rangeRow;
@@ -133,7 +132,16 @@
     tableHTML += tcpaRow;
     tableHTML += bcrRow;
     tableHTML += bctRow;
-    tableHTML += '</table>';
     return tableHTML
   }
 </script>
+
+<style scoped>
+.target-table {
+  width: 100%;
+}
+
+.target-display-unit {
+  padding: 0px;
+}
+</style>

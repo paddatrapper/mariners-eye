@@ -12,6 +12,8 @@ declare module 'vue' {
     AppFooter: typeof import('./components/AppFooter.vue')['default']
     DisplaySettings: typeof import('./components/DisplaySettings.vue')['default']
     Gain: typeof import('./components/Gain.vue')['default']
+    List: typeof import('./components/List.vue')['default']
+    MessageList: typeof import('./components/MessageList.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     StatusLabel: typeof import('./components/StatusLabel.vue')['default']

@@ -1,26 +1,28 @@
 <template>
-  <v-row v-if="enableRow" :justify="justifyAlignment">
+  <v-row v-if="enableRow" :justify="props.justify">
     <v-card
-      class="card-status"
+      :class="cardClass"
       density="compact"
+      :height="props.height"
       rounded="0"
       variant="outlined"
       :width="props.width"
     >
-      <v-card-text class="status-text">
+      <v-card-text class="card-status-text">
         <slot />
       </v-card-text>
     </v-card>
   </v-row>
   <v-card
     v-else
-    class="card-status"
+    :class="cardClass"
     density="compact"
+    :height="props.height"
     rounded="0"
     variant="outlined"
     :width="props.width"
   >
-    <v-card-text class="status-text">
+    <v-card-text class="card-status-text">
       <slot />
     </v-card-text>
   </v-card>
@@ -34,25 +36,24 @@
   type Justify = UnwrapReadonlyArray<VRow['justify']>
 
   interface StatusLabelProps {
-    width?: string;
+    class?: string;
+    height?: string;
     justify?: Justify;
+    width?: string;
     row?: boolean;
   }
 
   const props = defineProps<StatusLabelProps>()
-  const justifyAlignment = ref<Justify>('start')
-  if (props.justify) {
-    justifyAlignment.value = props.justify
-  }
 
-  const enableRow = ref(false)
-  if (props.row) {
-    enableRow.value = props.row
+  const enableRow = ref(props.row ?? false);
+  const cardClass = ref('card-status');
+  if (props.class) {
+    cardClass.value += ' ' + props.class;
   }
 </script>
 
 <style scoped>
-.status-text {
+.card-status-text {
   padding: 5px;
 }
 </style>

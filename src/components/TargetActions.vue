@@ -4,7 +4,7 @@
       <v-row>
         <v-col>
           <v-row class="row-info">
-              <StatusLabel>HDG</StatusLabel>
+            <StatusLabel>HDG</StatusLabel>
             <p class="label-info">{{ displayHeading() }}</p>
           </v-row>
           <v-row class="row-info">
@@ -12,7 +12,7 @@
             <p class="label-info">{{ displayCourse() }}<br>{{ displaySpeed() }}</p>
           </v-row>
           <v-row>
-            <StatusLabel>POS</StatusLabel>
+            <StatusLabel class="position-status">POS</StatusLabel>
             <p class="label-info">{{ displayPositionLatitude() }}<br>{{ displayPositionLongitude() }}</p>
           </v-row>
         </v-col>
@@ -69,5 +69,9 @@
 
 .btn-action {
   margin-bottom: 10px;
+}
+
+.position-status {
+  padding-top: 0.5em;
 }
 </style>
