@@ -60,7 +60,7 @@
 
   const props = defineProps<RadarProps>();
 
-  function getCenter (element: HTMLElement) : ScreenCoordinates {
+  function getCenter (element: string) : ScreenCoordinates {
     const divElement = document.getElementById(element);
 
     if (!divElement) {
