@@ -1,28 +1,30 @@
 <template>
   <v-container>
-    <v-row>
-      <v-col>
-        <ToggleButton :width="btnWidth">
+    <v-row class="display-setting" justify="end" no-gutter>
+      <v-col cols="2">
+        <ToggleButton justify="end" width="90px">
           {{ orientation }}
         </ToggleButton>
       </v-col>
-      <v-col>
-        <v-row>
+      <v-col cols="2">
+        <v-row class="display-setting" justify="end">
           <v-btn
             class="btn-icon-only"
             icon="mdi-menu-up"
+            min-width="30px"
             rounded="0"
           />
         </v-row>
-        <v-row>
+        <v-row class="display-setting" justify="end">
           <v-btn
             class="btn-icon-only"
             icon="mdi-menu-down"
+            min-width="30px"
             rounded="0"
           />
         </v-row>
       </v-col>
-      <v-col>
+      <v-col cols="5">
         <StatusLabel justify="end" row :width="btnWidth">
           RNG {{ range }} NM
         </StatusLabel>

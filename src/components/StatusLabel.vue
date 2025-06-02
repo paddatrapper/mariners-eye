@@ -1,5 +1,5 @@
 <template>
-  <v-row v-if="enableRow" :justify="props.justify">
+  <v-row v-if="enableRow" :class="rowClass" :justify="props.justify">
     <v-card
       :class="cardClass"
       density="compact"
@@ -49,6 +49,11 @@
   const cardClass = ref('card-status');
   if (props.class) {
     cardClass.value += ' ' + props.class;
+  }
+
+  const rowClass = ref('row-status');
+  if (props.class) {
+    rowClass.value += ' ' + props.class;
   }
 </script>
 

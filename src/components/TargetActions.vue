@@ -1,5 +1,5 @@
 <template>
-  <v-sheet border height="220px" width="300px">
+  <v-sheet border height="200px" min-width="300px">
     <v-container>
       <v-row>
         <v-col>
@@ -64,11 +64,11 @@
 }
 
 .row-info {
-  margin-bottom: 40px;
+  margin-bottom: 30px;
 }
 
 .btn-action {
-  margin-bottom: 10px;
+  margin-bottom: -5px;
 }
 
 .position-status {

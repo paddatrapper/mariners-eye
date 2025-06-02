@@ -1,6 +1,7 @@
 <template>
   <div
     id="radar-container"
+    v-resize="updateCenter"
     class="radar-container"
     :style="{ width: props.size + 'px', height: props.size + 'px' }"
   >
@@ -92,11 +93,6 @@
 
   onMounted(() => {
     updateCenter();
-    window.addEventListener('resize', updateCenter);
-  });
-
-  onUnmounted(() => {
-    window.removeEventListener('resize', updateCenter);
   });
 </script>
 

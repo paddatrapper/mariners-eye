@@ -14,6 +14,7 @@ declare module 'vue' {
     Gain: typeof import('./components/Gain.vue')['default']
     List: typeof import('./components/List.vue')['default']
     MessageList: typeof import('./components/MessageList.vue')['default']
+    PowerControls: typeof import('./components/PowerControls.vue')['default']
     Radar: typeof import('./components/Radar.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
