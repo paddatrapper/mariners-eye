@@ -103,6 +103,7 @@
   justify-content: center;
   align-items: center;
   overflow: visible;
+  z-index: 0;
 }
 
 .radar-svg {

@@ -16,10 +16,16 @@
       >
         <v-container class="container-screen">
           <v-row>
-            <v-col cols="1">
+            <v-col cols="2">
               <Gain />
             </v-col>
-            <v-col cols="4">
+            <v-col cols="1">
+              <TI />
+            </v-col>
+            <v-col cols="1">
+              <RM />
+            </v-col>
+            <v-col cols="1">
               <Radar :size="radarSize" />
             </v-col>
             <v-col cols="4">
@@ -69,16 +75,14 @@
   import MessageList from '@/components/MessageList.vue';
   import Radar from '@/components/Radar.vue';
   import PowerControls from '@/components/PowerControls.vue';
+  import TI from '@/components/TI.vue';
+  import RM from '@/components/RM.vue';
   import { onMounted, ref } from 'vue';
 
-  const radarSize = ref(850);
   const minScreenWidth = ref(1280);
   const minScreenHeight = ref(885)
   const screenSizeDialog = ref(false);
-
-  function updateRadarSize () {
-    radarSize.value = document.body.scrollHeight * 0.9;
-  }
+  const radarSize = minScreenHeight.value;
 
   function testScreenSize () {
     const width = window.innerWidth;
@@ -86,7 +90,6 @@
   }
 
   function onResize () {
-    updateRadarSize();
     testScreenSize();
   }
 
@@ -105,6 +108,6 @@
 }
 
 .radar-container {
-  left: -80px;
+  left: -400px;
 }
 </style>

@@ -24,7 +24,7 @@
           <p>VECTOR</p>
         </v-col>
         <v-col>
-          <p>TRAIL</p>
+          <p>TRAILS</p>
         </v-col>
       </v-row>
       <v-row class="row-target-info">
