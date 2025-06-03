@@ -65,7 +65,6 @@
         <h4>ARPA INFO</h4>
       </v-row>
       <v-row>
-        {{ renderTargetTable() }}
         <!-- eslint-disable vue/no-v-html -->
         <table
           class="target-table"
