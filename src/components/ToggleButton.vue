@@ -1,5 +1,8 @@
 <template>
-  <v-row :class="props.class" :justify="props.justify">
+  <v-row
+    :class="props.class"
+    :justify="props.justify"
+  >
     <v-btn
       :class="btnClass"
       density="compact"
@@ -16,7 +19,12 @@
         {{ toggle }}
       </template>
     </v-btn>
-    <p v-if="configuredVariant == 'compact'" class="btn-label"><slot /></p>
+    <p
+      v-if="configuredVariant == 'compact'"
+      class="btn-label"
+    >
+      <slot />
+    </p>
   </v-row>
 </template>
 

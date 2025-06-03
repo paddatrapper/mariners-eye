@@ -1,26 +1,66 @@
 <template>
-  <v-sheet border height="200px" min-width="300px">
+  <v-sheet
+    border
+    height="200px"
+    min-width="300px"
+  >
     <v-container>
       <v-row>
         <v-col>
           <v-row class="row-info">
             <StatusLabel>HDG</StatusLabel>
-            <p class="label-info">{{ displayHeading() }}</p>
+            <p class="label-info">
+              {{ displayHeading() }}
+            </p>
           </v-row>
           <v-row class="row-info">
             <StatusLabel>COG<br>SOG</StatusLabel>
-            <p class="label-info">{{ displayCourse() }}<br>{{ displaySpeed() }}</p>
+            <p class="label-info">
+              {{ displayCourse() }}<br>{{ displaySpeed() }}
+            </p>
           </v-row>
           <v-row>
-            <StatusLabel class="position-status">POS</StatusLabel>
-            <p class="label-info">{{ displayPositionLatitude() }}<br>{{ displayPositionLongitude() }}</p>
+            <StatusLabel class="position-status">
+              POS
+            </StatusLabel>
+            <p class="label-info">
+              {{ displayPositionLatitude() }}<br>{{ displayPositionLongitude() }}
+            </p>
           </v-row>
         </v-col>
         <v-col>
-          <ToggleButton class="btn-action" height="3em" justify="end" width="50px">ACQ<br>TGT</ToggleButton>
-          <ToggleButton class="btn-action" height="3em" justify="end" width="50px">DEL<br>TGT</ToggleButton>
-          <ToggleButton class="btn-action" height="3em" justify="end" width="50px">ARPA<br>INFO</ToggleButton>
-          <ToggleButton class="btn-action" height="3em" justify="end" width="50px">ARPA<br>MENU</ToggleButton>
+          <ToggleButton
+            class="btn-action"
+            height="3em"
+            justify="end"
+            width="50px"
+          >
+            ACQ<br>TGT
+          </ToggleButton>
+          <ToggleButton
+            class="btn-action"
+            height="3em"
+            justify="end"
+            width="50px"
+          >
+            DEL<br>TGT
+          </ToggleButton>
+          <ToggleButton
+            class="btn-action"
+            height="3em"
+            justify="end"
+            width="50px"
+          >
+            ARPA<br>INFO
+          </ToggleButton>
+          <ToggleButton
+            class="btn-action"
+            height="3em"
+            justify="end"
+            width="50px"
+          >
+            ARPA<br>MENU
+          </ToggleButton>
         </v-col>
       </v-row>
     </v-container>

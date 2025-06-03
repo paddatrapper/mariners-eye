@@ -1,6 +1,12 @@
 <template>
-  <v-container v-resize="onResize" :min-width="minScreenWidth">
-    <v-row align="center" justify="center">
+  <v-container
+    v-resize="onResize"
+    :min-width="minScreenWidth"
+  >
+    <v-row
+      align="center"
+      justify="center"
+    >
       <v-sheet
         class="sheet-screen"
         :height="minScreenHeight"
@@ -36,7 +42,11 @@
     fullscreen
   >
     <v-container height="100%">
-      <v-row align="center" justify="center" style="height: 100%;">
+      <v-row
+        align="center"
+        justify="center"
+        style="height: 100%;"
+      >
         <v-card>
           <v-card-title class="text-h5">
             Screen Size Warning

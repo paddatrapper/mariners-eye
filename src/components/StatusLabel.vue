@@ -1,5 +1,9 @@
 <template>
-  <v-row v-if="enableRow" :class="rowClass" :justify="props.justify">
+  <v-row
+    v-if="enableRow"
+    :class="rowClass"
+    :justify="props.justify"
+  >
     <v-card
       :class="cardClass"
       density="compact"

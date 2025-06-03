@@ -1,5 +1,9 @@
 <template>
-  <v-sheet border height="110px" width="300px">
+  <v-sheet
+    border
+    height="110px"
+    width="300px"
+  >
     <v-container>
       <v-row class="row-target-info">
         <v-col>
@@ -27,7 +31,9 @@
         <v-col>
           <v-row>
             <v-col>
-              <ToggleButton justify="center">OFF</ToggleButton>
+              <ToggleButton justify="center">
+                OFF
+              </ToggleButton>
             </v-col>
             <v-col class="target-display-unit">
               <p>m</p>
@@ -37,7 +43,9 @@
         <v-col>
           <v-row>
             <v-col>
-              <ToggleButton justify="center">OFF</ToggleButton>
+              <ToggleButton justify="center">
+                OFF
+              </ToggleButton>
             </v-col>
             <v-col class="target-display-unit">
               <p>m</p>
@@ -47,13 +55,22 @@
       </v-row>
     </v-container>
   </v-sheet>
-  <v-sheet border height="300px" width="300px">
+  <v-sheet
+    border
+    height="300px"
+    width="300px"
+  >
     <v-container>
       <v-row justify="center">
         <h4>ARPA INFO</h4>
       </v-row>
       <v-row>
-        <table class="target-table" v-html="renderTargetTable()" />
+        {{ renderTargetTable() }}
+        <!-- eslint-disable vue/no-v-html -->
+        <table
+          class="target-table"
+          v-html="renderTargetTable()"
+        />
       </v-row>
     </v-container>
   </v-sheet>

@@ -1,5 +1,8 @@
 <template>
-  <v-sheet border width="300px">
+  <v-sheet
+    border
+    width="300px"
+  >
     <v-container>
       <v-row>
         <v-col cols="1">
@@ -11,7 +14,10 @@
               rounded="0"
             />
           </v-row>
-          <v-row v-if="showListTotal" justify="center">
+          <v-row
+            v-if="showListTotal"
+            justify="center"
+          >
             <p>0</p>
           </v-row>
           <v-row>

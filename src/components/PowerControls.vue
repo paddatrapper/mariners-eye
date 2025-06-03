@@ -1,5 +1,9 @@
 <template>
-  <v-sheet class="sheet-power-controls" height="90px" width="300px">
+  <v-sheet
+    class="sheet-power-controls"
+    height="90px"
+    width="300px"
+  >
     <v-container>
       <v-row>
         <v-spacer />
