@@ -160,4 +160,9 @@
 .target-display-unit {
   padding: 0px;
 }
+
+.row-target-info > .v-col {
+  padding: 5px;
+  width: 63px;
+}
 </style>

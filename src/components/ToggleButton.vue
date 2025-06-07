@@ -1,6 +1,6 @@
 <template>
-  <v-row
-    :class="props.class"
+  <div
+    class="container-btn-toggle"
     :justify="props.justify"
   >
     <v-btn
@@ -25,7 +25,7 @@
     >
       <slot />
     </p>
-  </v-row>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -40,6 +40,7 @@
     class?: string;
     height?: string;
     justify?: Justify;
+    noGutters?: boolean;
     width?: string;
     variant?: Variant;
   }
@@ -57,9 +58,16 @@
 <style scoped>
 .btn-toggle {
   padding: 5px;
+  z-index: 1;
 }
 
 .btn-label {
   margin-left: 5px;
+}
+
+.container-btn-toggle {
+  padding: 0px;
+  display: flex;
+  flex-direction: row
 }
 </style>

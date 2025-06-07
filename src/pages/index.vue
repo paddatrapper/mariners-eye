@@ -15,7 +15,7 @@
         :width="minScreenWidth"
       >
         <v-container class="container-screen">
-          <v-row>
+          <v-row no-gutters>
             <v-col cols="2">
               <Gain />
             </v-col>
@@ -25,17 +25,51 @@
             <v-col cols="1">
               <RM />
             </v-col>
-            <v-col cols="1">
-              <Radar :size="radarSize" />
-            </v-col>
+            <v-spacer />
             <v-col cols="4">
               <DisplaySettings />
             </v-col>
             <v-col cols="3">
               <TargetActions />
+            </v-col>
+          </v-row>
+          <v-row
+            class="radar-row"
+            no-gutters
+          >
+            <v-spacer />
+            <v-col cols="1">
+              <Radar :size="radarSize" />
+            </v-col>
+            <v-spacer />
+            <v-col cols="3">
               <TargetInfo />
+            </v-col>
+          </v-row>
+          <v-row
+            no-gutters
+            justify="end"
+          >
+            <v-spacer />
+            <v-col cols="3">
               <AlarmList />
+            </v-col>
+          </v-row>
+          <v-row no-gutters>
+            <v-spacer />
+            <v-col cols="3">
               <MessageList />
+            </v-col>
+          </v-row>
+          <v-row
+            no-gutters
+            justify="end"
+          >
+            <v-spacer />
+            <v-col cols="10">
+              <RangeBearing />
+            </v-col>
+            <v-col cols="2">
               <PowerControls />
             </v-col>
           </v-row>
@@ -77,10 +111,11 @@
   import PowerControls from '@/components/PowerControls.vue';
   import TI from '@/components/TI.vue';
   import RM from '@/components/RM.vue';
+  import RangeBearing from '@/components/RangeBearing.vue';
   import { onMounted, ref } from 'vue';
 
   const minScreenWidth = ref(1280);
-  const minScreenHeight = ref(885)
+  const minScreenHeight = ref(895)
   const screenSizeDialog = ref(false);
   const radarSize = minScreenHeight.value;
 
@@ -109,5 +144,10 @@
 
 .radar-container {
   left: -400px;
+  top: -200px;
+}
+
+.radar-row {
+  height: 410px;
 }
 </style>

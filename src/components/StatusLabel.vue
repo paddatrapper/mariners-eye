@@ -45,8 +45,8 @@
     disabled?: boolean;
     height?: string;
     justify?: Justify;
-    width?: string;
     row?: boolean;
+    width?: string;
     variant?: Variant;
   }
 

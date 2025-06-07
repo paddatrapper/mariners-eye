@@ -1,87 +1,92 @@
 <template>
-  <v-container>
+  <v-container class="display-container">
     <v-row
       class="display-setting"
       justify="end"
       no-gutter
     >
-      <v-col cols="2">
+      <v-col
+        cols="3"
+        style="margin-top: -12px;"
+      >
         <ToggleButton
-          justify="end"
+          class="btn-display"
           width="90px"
         >
           {{ orientation }}
         </ToggleButton>
       </v-col>
-      <v-col cols="2">
-        <v-row
-          class="display-setting"
-          justify="end"
-        >
+      <v-col cols="3">
+        <v-row justify="end">
           <v-btn
             class="btn-icon-only"
             icon="mdi-menu-up"
             min-width="30px"
             rounded="0"
+            style="z-index: 1;"
           />
         </v-row>
-        <v-row
-          class="display-setting"
-          justify="end"
-        >
+        <v-row justify="end">
           <v-btn
             class="btn-icon-only"
             icon="mdi-menu-down"
             min-width="30px"
             rounded="0"
+            style="z-index: 1;"
           />
         </v-row>
       </v-col>
-      <v-col cols="5">
-        <StatusLabel
-          justify="end"
-          row
-          :width="btnWidth"
-        >
-          RNG {{ range }} NM
-        </StatusLabel>
-        <ToggleButton
-          justify="end"
-          :width="btnWidth"
-        >
-          RINGS OFF
-        </ToggleButton>
-        <ToggleButton
-          justify="end"
-          :width="btnWidth"
-        >
-          CENTRE
-        </ToggleButton>
-        <ToggleButton
-          justify="end"
-          :width="btnWidth"
-        >
-          REL VECTOR
-        </ToggleButton>
-        <StatusLabel
-          justify="end"
-          row
-          width="100px"
-        >
-          GND STAB
-        </StatusLabel>
-        <ToggleButton
-          justify="end"
-          width="50px"
-        >
-          HL
-        </ToggleButton>
-        <ToggleButton
-          justify="end"
-          width="50px"
-        >
-          SYM
-        </ToggleButton>
+      <v-col cols="6">
+        <v-row justify="end">
+          <StatusLabel :width="btnWidth">
+            RNG {{ range }} NM
+          </StatusLabel>
+        </v-row>
+        <v-row justify="end">
+          <ToggleButton
+            class="btn-display"
+            :width="btnWidth"
+          >
+            RINGS OFF
+          </ToggleButton>
+        </v-row>
+        <v-row justify="end">
+          <ToggleButton
+            class="btn-display"
+            :width="btnWidth"
+          >
+            CENTRE
+          </ToggleButton>
+        </v-row>
+        <v-row justify="end">
+          <ToggleButton
+            class="btn-display"
+            :width="btnWidth"
+          >
+            REL VECTOR
+          </ToggleButton>
+        </v-row>
+        <v-row justify="end">
+          <StatusLabel
+            width="100px"
+          >
+            GND STAB
+          </StatusLabel>
+        </v-row>
+        <v-row justify="end">
+          <ToggleButton
+            width="50px"
+          >
+            HL
+          </ToggleButton>
+        </v-row>
+        <v-row justify="end">
+          <ToggleButton
+            width="50px"
+          >
+            SYM
+          </ToggleButton>
+        </v-row>
       </v-col>
     </v-row>
   </v-container>
@@ -96,3 +101,17 @@
   const range = ref(1.5);
   const btnWidth = ref('125px');
 </script>
+
+<style scoped>
+.display-container {
+  padding: 0px;
+}
+
+.display-setting {
+  margin: 5px;
+}
+
+.btn-display {
+  margin-right: 0px;
+}
+</style>

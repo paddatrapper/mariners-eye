@@ -16,6 +16,7 @@ declare module 'vue' {
     MessageList: typeof import('./components/MessageList.vue')['default']
     PowerControls: typeof import('./components/PowerControls.vue')['default']
     Radar: typeof import('./components/Radar.vue')['default']
+    RangeBearing: typeof import('./components/RangeBearing.vue')['default']
     RM: typeof import('./components/RM.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']

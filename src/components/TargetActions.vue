@@ -1,8 +1,8 @@
 <template>
   <v-sheet
     border
-    height="200px"
-    min-width="300px"
+    height="100%"
+    width="300px"
   >
     <v-container>
       <v-row>
@@ -29,38 +29,53 @@
           </v-row>
         </v-col>
         <v-col>
-          <ToggleButton
+          <v-row justify="end">
+            <ToggleButton
+              class="btn-action"
+              height="3em"
+              justify="end"
+              width="50px"
+            >
+              ACQ<br>TGT
+            </ToggleButton>
+          </v-row>
+          <v-row
             class="btn-action"
-            height="3em"
             justify="end"
-            width="50px"
           >
-            ACQ<br>TGT
-          </ToggleButton>
-          <ToggleButton
+            <ToggleButton
+              class="btn-action"
+              height="3em"
+              justify="end"
+              width="50px"
+            >
+              DEL<br>TGT
+            </ToggleButton>
+          </v-row>
+          <v-row
             class="btn-action"
-            height="3em"
             justify="end"
-            width="50px"
           >
-            DEL<br>TGT
-          </ToggleButton>
-          <ToggleButton
+            <ToggleButton
+              height="3em"
+              justify="end"
+              width="50px"
+            >
+              ARPA<br>INFO
+            </ToggleButton>
+          </v-row>
+          <v-row
             class="btn-action"
-            height="3em"
             justify="end"
-            width="50px"
           >
-            ARPA<br>INFO
-          </ToggleButton>
-          <ToggleButton
-            class="btn-action"
-            height="3em"
-            justify="end"
-            width="50px"
-          >
-            ARPA<br>MENU
-          </ToggleButton>
+            <ToggleButton
+              height="3em"
+              justify="end"
+              width="50px"
+            >
+              ARPA<br>MENU
+            </ToggleButton>
+          </v-row>
         </v-col>
       </v-row>
     </v-container>
@@ -107,11 +122,11 @@
   margin-bottom: 30px;
 }
 
-.btn-action {
-  margin-bottom: -5px;
-}
-
 .position-status {
   padding-top: 0.5em;
+}
+
+.btn-action {
+  margin-top: 18px;
 }
 </style>
