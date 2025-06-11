@@ -11,6 +11,7 @@
       rounded="0"
       variant="flat"
       :width="props.width"
+      :color="props.active ? '#2be32e' : '#fff434'"
     >
       <template v-if="configuredVariant === 'full'">
         <slot />
@@ -37,6 +38,7 @@
   type Variant = 'full' | 'compact';
 
   interface ToggleButtonProps {
+    active?: boolean;
     class?: string;
     height?: string;
     justify?: Justify;

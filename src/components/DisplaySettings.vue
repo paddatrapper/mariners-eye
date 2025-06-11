@@ -75,6 +75,7 @@
         </v-row>
         <v-row justify="end">
           <ToggleButton
+            active
             width="50px"
           >
             HL
@@ -82,6 +83,7 @@
         </v-row>
         <v-row justify="end">
           <ToggleButton
+            active
             width="50px"
           >
             SYM

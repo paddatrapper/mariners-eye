@@ -50,15 +50,17 @@
             no-gutters
             justify="end"
           >
-            <v-spacer />
             <v-col cols="3">
-              <AlarmList />
+              <CursorInfo />
             </v-col>
-          </v-row>
-          <v-row no-gutters>
             <v-spacer />
             <v-col cols="3">
-              <MessageList />
+              <v-row no-gutters>
+                <AlarmList />
+              </v-row>
+              <v-row no-gutters>
+                <MessageList />
+              </v-row>
             </v-col>
           </v-row>
           <v-row
@@ -112,6 +114,7 @@
   import TI from '@/components/TI.vue';
   import RM from '@/components/RM.vue';
   import RangeBearing from '@/components/RangeBearing.vue';
+  import CursorInfo from '@/components/CursorInfo.vue';
   import { onMounted, ref } from 'vue';
 
   const minScreenWidth = ref(1280);

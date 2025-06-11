@@ -10,10 +10,14 @@
           <ToggleButton>RTE</ToggleButton>
         </v-col>
         <v-col>
-          <ToggleButton>CAS</ToggleButton>
+          <ToggleButton active>
+            CAS
+          </ToggleButton>
         </v-col>
         <v-col>
-          <ToggleButton>AIS</ToggleButton>
+          <ToggleButton active>
+            AIS
+          </ToggleButton>
         </v-col>
         <v-col>
           <ToggleButton>DF</ToggleButton>

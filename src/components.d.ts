@@ -10,6 +10,7 @@ declare module 'vue' {
   export interface GlobalComponents {
     AlarmList: typeof import('./components/AlarmList.vue')['default']
     AppFooter: typeof import('./components/AppFooter.vue')['default']
+    CursorInfo: typeof import('./components/CursorInfo.vue')['default']
     DisplaySettings: typeof import('./components/DisplaySettings.vue')['default']
     Gain: typeof import('./components/Gain.vue')['default']
     List: typeof import('./components/List.vue')['default']

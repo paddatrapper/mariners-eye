@@ -57,6 +57,7 @@
             justify="end"
           >
             <ToggleButton
+              active
               height="3em"
               justify="end"
               width="50px"
