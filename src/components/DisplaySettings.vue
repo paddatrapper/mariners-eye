@@ -12,8 +12,9 @@
         <ToggleButton
           class="btn-display"
           width="90px"
+          @click="orientationToggle"
         >
-          {{ orientation }}
+          {{ orientationOptions[orientation] }}
         </ToggleButton>
       </v-col>
       <v-col cols="3">
@@ -46,8 +47,9 @@
           <ToggleButton
             class="btn-display"
             :width="btnWidth"
+            @click="toggleRings"
           >
-            RINGS OFF
+            RINGS {{ ringsState }}
           </ToggleButton>
         </v-row>
         <v-row justify="end">
@@ -99,9 +101,23 @@
   import StatusLabel from './StatusLabel.vue';
   import ToggleButton from './ToggleButton.vue';
 
-  const orientation = ref('H-UP');
+  const orientationOptions = ['H-UP', 'N-UP'];
+  const orientation = ref(0)
   const range = ref(1.5);
   const btnWidth = ref('125px');
+  const ringsState = ref('OFF');
+
+  function orientationToggle() {
+    orientation.value = (orientation.value + 1) % orientationOptions.length;
+  }
+
+  function toggleRings(isActive: boolean) {
+    if (isActive) {
+      ringsState.value = 'ON';
+    } else {
+      ringsState.value = 'OFF';
+    }
+  }
 </script>
 
 <style scoped>

@@ -43,14 +43,13 @@
     class?: string;
     height?: string;
     justify?: Justify;
-    noGutters?: boolean;
     width?: string;
     variant?: Variant;
   }
 
   const props = defineProps<ToggleButtonProps>()
   const emit = defineEmits<{
-    (e: 'clicked', isActive: boolean): void
+    (e: 'click', isActive: boolean): void
   }>();
 
   const label = ref('A');
@@ -64,7 +63,7 @@
   
   function onClick() {
     isActive.value = !isActive.value;
-    emit('clicked', isActive.value);
+    emit('click', isActive.value);
   }
 </script>
 

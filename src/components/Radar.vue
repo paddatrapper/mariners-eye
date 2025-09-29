@@ -37,6 +37,7 @@
         {{ degree }}
       </text>
       <text
+        v-if="!props.isActive"
         dominant-baseline="middle"
         fill="white"
         font-size="64"
@@ -57,6 +58,7 @@
 
   interface RadarProps {
     size: number
+    isActive: boolean
   }
 
   const props = defineProps<RadarProps>();

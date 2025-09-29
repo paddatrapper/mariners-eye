@@ -39,7 +39,10 @@
           >
             <v-spacer />
             <v-col cols="1">
-              <Radar :size="radarSize" />
+              <Radar
+                :size="radarSize"
+                :is-active="radarTransmitting"
+              />
             </v-col>
             <v-spacer />
             <v-col cols="3">
@@ -72,7 +75,7 @@
               <RangeBearing />
             </v-col>
             <v-col cols="2">
-              <PowerControls />
+              <PowerControls @transmit-toggle="onTransmitToggle" />
             </v-col>
           </v-row>
         </v-container>
@@ -134,6 +137,11 @@
   onMounted(() => {
     onResize();
   });
+
+  const radarTransmitting = ref(false);
+  function onTransmitToggle(isActive: boolean) {
+    radarTransmitting.value = isActive;
+  }
 </script>
 
 <style scoped>
