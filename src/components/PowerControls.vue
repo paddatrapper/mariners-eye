@@ -46,17 +46,13 @@
   import ToggleButton from './ToggleButton.vue';
   import StatusLabel from './StatusLabel.vue';
 
-  const powerLabels = {
-    false: 'TX',
-    true: 'STBY'
-  };
-  const powerLabel = ref(powerLabels[false]);
+  const powerLabel = ref('TX');
   const emit = defineEmits<{
     (e: 'transmitToggle', isActive: boolean): void
   }>();
 
   function transmitToggle(isActive: boolean) {
-    powerLabel.value = powerLabels[isActive];
+    powerLabel.value = isActive ? 'STBY' : 'TX';
     emit('transmitToggle', isActive);
   }
 </script>
