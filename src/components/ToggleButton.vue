@@ -11,13 +11,14 @@
       rounded="0"
       variant="flat"
       :width="props.width"
-      :color="props.active ? '#2be32e' : '#fff434'"
+      :color="isActive ? '#2be32e' : '#fff434'"
+      @click="onClick"
     >
       <template v-if="configuredVariant === 'full'">
         <slot />
       </template>
       <template v-else-if="configuredVariant === 'compact'">
-        {{ toggle }}
+        {{ label }}
       </template>
     </v-btn>
     <p
@@ -48,13 +49,23 @@
   }
 
   const props = defineProps<ToggleButtonProps>()
+  const emit = defineEmits<{
+    (e: 'clicked', isActive: boolean): void
+  }>();
 
-  const toggle = ref('A');
+  const label = ref('A');
   const btnClass = ref('btn-toggle btn-toggle-' + props.variant);
   if (props.class) {
     btnClass.value += ' ' + props.class;
   }
   const configuredVariant = ref<Variant>(props.variant ?? 'full');
+
+  const isActive = ref(props.active ?? false);
+  
+  function onClick() {
+    isActive.value = !isActive.value;
+    emit('clicked', isActive.value);
+  }
 </script>
 
 <style scoped>
