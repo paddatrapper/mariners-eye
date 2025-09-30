@@ -91,7 +91,7 @@
   const heading = ref(0.0);
   const course = ref(0.0);
   const speed = ref(0.0);
-  const postition = ref({ latitude: 0.0, longitude: 0.0 });
+  const position = ref({ latitude: 0.0, longitude: 0.0 });
 
   function displayHeading (): string {
     return heading.value.toFixed(1) + '°T';
@@ -106,11 +106,11 @@
   }
 
   function displayPositionLatitude (): string {
-    return postition.value.latitude.toFixed(5) + ' N';
+    return position.value.latitude.toFixed(5) + ' N';
   }
 
   function displayPositionLongitude (): string {
-    return postition.value.longitude.toFixed(5) + ' W';
+    return position.value.longitude.toFixed(5) + ' W';
   }
 </script>
 

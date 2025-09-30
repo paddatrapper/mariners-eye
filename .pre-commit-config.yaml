@@ -1,0 +1,57 @@
+---
+# See https://pre-commit.com for more information
+# See https://pre-commit.com/hooks.html for more hooks
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      - id: check-added-large-files
+      - id: check-case-conflict
+      - id: check-executables-have-shebangs
+      - id: check-shebang-scripts-are-executable
+      - id: check-symlinks
+      - id: destroyed-symlinks
+
+      - id: check-json
+      - id: check-yaml
+      - id: check-xml
+      - id: check-toml
+
+      - id: check-merge-conflict
+      - id: end-of-file-fixer
+        exclude: (\.json|src/auto-imports\.d\.ts)$
+      - id: mixed-line-ending
+        args: [--fix=lf]
+      - id: trailing-whitespace
+        exclude: \.ambr$
+
+  - repo: https://github.com/pre-commit/mirrors-prettier
+    rev: v3.1.0
+    hooks:
+      - id: prettier
+        files: \.(md|mdx|yml|yaml|js|jsx|ts|tsx|json|css)$
+        exclude: src/auto-imports\.d\.ts$
+
+  - repo: https://github.com/codespell-project/codespell
+    rev: v2.3.0
+    hooks:
+      - id: codespell
+        exclude: yarn\.lock$
+
+  - repo: local
+    hooks:
+      - id: lint
+        name: lint
+        description: Lint files with eslint
+        entry: yarn lint
+        pass_filenames: false
+        language: system
+        files: \.(js|jsx|ts|tsx|vue)$
+
+      - id: type-check
+        name: type-check
+        description: Check types with tsc
+        entry: yarn type-check
+        pass_filenames: false
+        language: system
+        files: \.(js|jsx|ts|tsx|vue)$

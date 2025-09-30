@@ -60,7 +60,7 @@
   const configuredVariant = ref<Variant>(props.variant ?? 'full');
 
   const isActive = ref(props.active ?? false);
-  
+
   function onClick() {
     isActive.value = !isActive.value;
     emit('click', isActive.value);
