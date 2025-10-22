@@ -31,10 +31,12 @@
         <v-col>
           <v-row justify="end">
             <ToggleButton
+              id="btn-acq-tgt"
               class="btn-action"
               height="3em"
               justify="end"
               width="50px"
+              exclusive
             >
               ACQ<br>TGT
             </ToggleButton>
@@ -44,10 +46,12 @@
             justify="end"
           >
             <ToggleButton
+              id="btn-del-tgt"
               class="btn-action"
               height="3em"
               justify="end"
               width="50px"
+              exclusive
             >
               DEL<br>TGT
             </ToggleButton>

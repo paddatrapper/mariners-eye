@@ -33,24 +33,44 @@
 <script setup lang="ts">
   import { ref } from 'vue';
   import type { VRow } from 'vuetify/components';
+  import { useExclusiveToggle } from '@/composables/useExclusiveToggle';
 
   type UnwrapReadonlyArray<A> = A extends Readonly<Array<infer I>> ? I : A;
   type Justify = UnwrapReadonlyArray<VRow['justify']>
   type Variant = 'full' | 'compact';
 
   interface ToggleButtonProps {
+    id?: string;
     active?: boolean;
     class?: string;
     height?: string;
     justify?: Justify;
     width?: string;
     variant?: Variant;
+    exclusive?: boolean;
   }
 
   const props = defineProps<ToggleButtonProps>()
   const emit = defineEmits<{
     (e: 'click', isActive: boolean): void
   }>();
+
+  const isActive = ref(props.active ?? false);
+  const isExclusive = ref(props.exclusive ?? false);
+  let toggle: () => void = () => { isActive.value = !isActive.value; };
+
+  if (isExclusive.value) {
+    if (!props.id) {
+      throw new Error('An id is required when using exclusive toggle buttons.');
+    }
+    const exclusiveToggle = useExclusiveToggle(props.id);
+    if (isExclusive.value) {
+      toggle = exclusiveToggle.toggle;
+    }
+    watch(exclusiveToggle.isActive, (newVal: boolean) => {
+      isActive.value = newVal;
+    });
+  }
 
   const label = ref('A');
   const btnClass = ref('btn-toggle btn-toggle-' + props.variant);
@@ -59,10 +79,10 @@
   }
   const configuredVariant = ref<Variant>(props.variant ?? 'full');
 
-  const isActive = ref(props.active ?? false);
-
   function onClick() {
-    isActive.value = !isActive.value;
+    if (isExclusive.value) {
+      toggle();
+    }
     emit('click', isActive.value);
   }
 </script>
