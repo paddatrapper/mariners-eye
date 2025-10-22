@@ -80,9 +80,7 @@
   const configuredVariant = ref<Variant>(props.variant ?? 'full');
 
   function onClick() {
-    if (isExclusive.value) {
-      toggle();
-    }
+    toggle();
     emit('click', isActive.value);
   }
 </script>
