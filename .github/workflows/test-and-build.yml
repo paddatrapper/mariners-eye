@@ -1,4 +1,4 @@
-name: Publish Docker image
+name: Test and publish Docker image
 
 on:
   push:
@@ -14,7 +14,8 @@ jobs:
     permissions:
       contents: read
     strategy:
-      node-version: [20]
+      matrix:
+        node-version: [20]
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
