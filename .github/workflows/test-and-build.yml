@@ -15,18 +15,20 @@ jobs:
       contents: read
     strategy:
       matrix:
-        node-version: [20]
+        node-version: [24]
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v6
         with:
           node-version: ${{ matrix.node-version }}
+          cache: yarn
+          cache-dependency-path: yarn.lock
 
-      - run: npm clean-install
-      - run: npm run test:unit --run
+      - run: yarn install
+      - run: yarn run test:unit --run
 
   build-and-push-image:
     runs-on: ubuntu-latest
