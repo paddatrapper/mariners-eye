@@ -27,7 +27,7 @@ jobs:
           cache: yarn
           cache-dependency-path: yarn.lock
 
-      - run: yarn install
+      - run: yarn install --immutable
       - run: yarn run test:unit --run
 
   build-and-push-image:
