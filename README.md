@@ -14,6 +14,22 @@ To start the development server with hot-reload, run the following command. The 
 yarn dev
 ```
 
+### Testing
+
+Unit tests are implemented in Vitest. Running in development will cause vitest
+to watch for changes and rerun the tests each time:
+
+```bash
+yarn test:unit
+```
+
+Type checking and linting are available:
+
+```bash
+yarn type-check
+yarn lint
+```
+
 ### Building for Production
 
 To build your project for production, use:

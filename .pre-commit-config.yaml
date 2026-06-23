@@ -55,3 +55,11 @@ repos:
         pass_filenames: false
         language: system
         files: \.(js|jsx|ts|tsx|vue)$
+
+      - id: unit-test
+        name: unit-test
+        description: Run unit tests with vitest
+        entry: yarn test:unit --run
+        pass_filenames: false
+        language: system
+        files: \.(js|jsx|ts|tsx|vue)$
