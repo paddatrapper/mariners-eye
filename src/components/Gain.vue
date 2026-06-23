@@ -3,7 +3,7 @@
     class="gain"
     height="100%"
   >
-    <v-row no-gutters>
+    <v-row density="compact">
       <v-col>
         <ToggleButton
           variant="compact"
@@ -55,6 +55,6 @@
 
 <style scoped>
 .row-status {
-  margin-top: 20px;
+  margin-top: 2px;
 }
 </style>

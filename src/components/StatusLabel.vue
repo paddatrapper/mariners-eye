@@ -2,7 +2,7 @@
   <v-row
     v-if="enableRow"
     :class="rowClass"
-    :justify="props.justify"
+    density="compact"
   >
     <v-card
       :class="cardClass"
@@ -37,7 +37,7 @@
   import type { VBtn, VRow } from 'vuetify/components';
 
   type UnwrapReadonlyArray<A> = A extends Readonly<Array<infer I>> ? I : A;
-  type Justify = UnwrapReadonlyArray<VRow['justify']>
+  type Justify = 'start' | 'center' | 'end' | 'default'
   type Variant = UnwrapReadonlyArray<VBtn['variant']>
 
   interface StatusLabelProps {
@@ -62,7 +62,8 @@
     cardClass.value += ' disabled';
   }
 
-  const rowClass = ref('row-status');
+  const configuredJustification = ref<Justify>(props.justify ?? 'default');
+  const rowClass = ref('row-status justify-' + configuredJustification.value);
   if (props.class) {
     rowClass.value += ' ' + props.class;
   }

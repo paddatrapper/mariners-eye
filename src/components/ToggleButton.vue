@@ -1,7 +1,6 @@
 <template>
   <div
-    class="container-btn-toggle"
-    :justify="props.justify"
+    :class="divClass"
   >
     <v-btn
       :class="btnClass"
@@ -32,11 +31,9 @@
 
 <script setup lang="ts">
   import { ref } from 'vue';
-  import type { VRow } from 'vuetify/components';
   import { useExclusiveToggle } from '@/composables/useExclusiveToggle';
 
-  type UnwrapReadonlyArray<A> = A extends Readonly<Array<infer I>> ? I : A;
-  type Justify = UnwrapReadonlyArray<VRow['justify']>
+  type Justify = 'start' | 'center' | 'end' | 'default'
   type Variant = 'full' | 'compact';
 
   interface ToggleButtonProps {
@@ -78,6 +75,8 @@
     btnClass.value += ' ' + props.class;
   }
   const configuredVariant = ref<Variant>(props.variant ?? 'full');
+  const configuredJustification = ref<Justify>(props.justify ?? 'default');
+  const divClass = ref('container-btn-toggle justify-' + configuredJustification.value);
 
   function onClick() {
     toggle();
@@ -93,10 +92,13 @@
 
 .btn-label {
   margin-left: 5px;
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 
 .container-btn-toggle {
   padding: 0px;
+  padding-bottom: 2px;
   display: flex;
   flex-direction: row
 }

@@ -1,13 +1,11 @@
 <template>
   <v-container class="display-container">
     <v-row
-      class="display-setting"
-      justify="end"
-      no-gutter
+      class="display-setting justify-end"
+      density="compact"
     >
       <v-col
         cols="3"
-        style="margin-top: -12px;"
       >
         <ToggleButton
           class="btn-display"
@@ -18,7 +16,11 @@
         </ToggleButton>
       </v-col>
       <v-col cols="3">
-        <v-row justify="end">
+        <v-row
+          class="display-btn-row justify-end"
+          density="compact"
+          style="margin-bottom: 2px;"
+        >
           <v-btn
             class="btn-icon-only"
             icon="mdi-menu-up"
@@ -27,7 +29,10 @@
             style="z-index: 1;"
           />
         </v-row>
-        <v-row justify="end">
+        <v-row
+          class="display-btn-row justify-end"
+          density="compact"
+        >
           <v-btn
             class="btn-icon-only"
             icon="mdi-menu-down"
@@ -37,13 +42,19 @@
           />
         </v-row>
       </v-col>
-      <v-col cols="6">
-        <v-row justify="end">
+      <v-col cols="5">
+        <v-row
+          class="display-btn-row justify-end"
+          density="compact"
+        >
           <StatusLabel :width="btnWidth">
             RNG {{ range }} NM
           </StatusLabel>
         </v-row>
-        <v-row justify="end">
+        <v-row
+          class="display-btn-row justify-end"
+          density="compact"
+        >
           <ToggleButton
             class="btn-display"
             :width="btnWidth"
@@ -52,7 +63,10 @@
             RINGS {{ ringsState }}
           </ToggleButton>
         </v-row>
-        <v-row justify="end">
+        <v-row
+          class="display-btn-row justify-end"
+          density="compact"
+        >
           <ToggleButton
             class="btn-display"
             :width="btnWidth"
@@ -60,7 +74,10 @@
             CENTRE
           </ToggleButton>
         </v-row>
-        <v-row justify="end">
+        <v-row
+          class="display-btn-row justify-end"
+          density="compact"
+        >
           <ToggleButton
             class="btn-display"
             :width="btnWidth"
@@ -68,14 +85,20 @@
             REL VECTOR
           </ToggleButton>
         </v-row>
-        <v-row justify="end">
+        <v-row
+          class="display-btn-row justify-end"
+          density="compact"
+        >
           <StatusLabel
             width="100px"
           >
             GND STAB
           </StatusLabel>
         </v-row>
-        <v-row justify="end">
+        <v-row
+          class="display-btn-row justify-end"
+          density="compact"
+        >
           <ToggleButton
             active
             width="50px"
@@ -83,7 +106,10 @@
             HL
           </ToggleButton>
         </v-row>
-        <v-row justify="end">
+        <v-row
+          class="display-btn-row justify-end"
+          density="compact"
+        >
           <ToggleButton
             active
             width="50px"
@@ -126,10 +152,14 @@
 }
 
 .display-setting {
-  margin: 5px;
+  margin: 0px;
 }
 
 .btn-display {
   margin-right: 0px;
+}
+
+.display-btn-row {
+  margin: 0px;
 }
 </style>

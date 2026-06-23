@@ -4,17 +4,17 @@
     height="90px"
     width="190px"
   >
-    <v-container style="padding: 0px;">
+    <v-container class="power-container">
       <v-row
-        no-gutters
-        justify="end"
+        class="justify-end"
+        density="compact"
       >
         <v-spacer />
-        <v-col cols="3">
+        <v-col cols="4">
           <ToggleButton
             class="btn-transmission"
             height="50px"
-            width="50px"
+            width="60px"
             @click="transmitToggle"
           >
             {{ powerLabel }}
@@ -22,8 +22,8 @@
         </v-col>
       </v-row>
       <v-row
-        no-gutters
-        justify="end"
+        class="justify-end margin-0px"
+        density="compact"
       >
         <v-spacer />
         <v-col cols="5">
@@ -31,7 +31,7 @@
             class="status-label-master"
             justify="end"
             row
-            width="100px"
+            width="102px"
           >
             MASTER
           </StatusLabel>
@@ -58,16 +58,16 @@
 </script>
 
 <style scoped>
-.status-label-master {
-  padding-top: 14px;
-  margin-right: -2px;
-}
-
 .sheet-power-controls {
   background: var(--v-theme-background);
+  padding: 0px;
 }
 
-.btn-trasmission {
-  margin-left: 0px;
+.power-container {
+  padding: 0px;
+}
+
+.margin-0px {
+  margin: 0px;
 }
 </style>

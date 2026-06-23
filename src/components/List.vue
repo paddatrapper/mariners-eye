@@ -4,9 +4,9 @@
     width="300px"
   >
     <v-container>
-      <v-row>
+      <v-row density="compact">
         <v-col cols="1">
-          <v-row>
+          <v-row density="compact">
             <v-btn
               class="btn-icon-only"
               height="100%"
@@ -16,11 +16,14 @@
           </v-row>
           <v-row
             v-if="showListTotal"
-            justify="center"
+            class="justify-center"
+            density="compact"
           >
-            <p>0</p>
+            <p class="margin-0px">
+              0
+            </p>
           </v-row>
-          <v-row>
+          <v-row density="compact">
             <v-btn
               class="btn-icon-only"
               height="100%"
@@ -51,5 +54,9 @@
   padding: 0px;
   margin: 0px;
   font-size: 22px;
+}
+
+.margin-0px {
+  margin: 0px;
 }
 </style>

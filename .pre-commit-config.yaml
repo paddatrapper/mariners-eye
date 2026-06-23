@@ -30,7 +30,7 @@ repos:
     hooks:
       - id: prettier
         files: \.(md|mdx|yml|yaml|js|jsx|ts|tsx|json|css)$
-        exclude: src/(auto-imports\.d\.ts|components\.d\.ts)$
+        exclude: src/(auto-imports\.d\.ts|components\.d\.ts|route-map\.d\.ts)$
 
   - repo: https://github.com/codespell-project/codespell
     rev: v2.3.0
@@ -46,7 +46,6 @@ repos:
         entry: yarn lint
         pass_filenames: false
         language: system
-        files: \.(js|jsx|ts|tsx|vue)$
 
       - id: type-check
         name: type-check

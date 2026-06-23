@@ -4,8 +4,7 @@
     :min-width="minScreenWidth"
   >
     <v-row
-      align="center"
-      justify="center"
+      class="align-center justify-center"
     >
       <v-sheet
         class="sheet-screen"
@@ -15,7 +14,7 @@
         :width="minScreenWidth"
       >
         <v-container class="container-screen">
-          <v-row no-gutters>
+          <v-row density="compact">
             <v-col cols="2">
               <Gain />
             </v-col>
@@ -26,7 +25,7 @@
               <RM />
             </v-col>
             <v-spacer />
-            <v-col cols="4">
+            <v-col cols="3">
               <DisplaySettings />
             </v-col>
             <v-col cols="3">
@@ -34,8 +33,8 @@
             </v-col>
           </v-row>
           <v-row
-            class="radar-row"
-            no-gutters
+            class="radar-row compact-row"
+            density="compact"
           >
             <v-spacer />
             <v-col cols="1">
@@ -50,30 +49,36 @@
             </v-col>
           </v-row>
           <v-row
-            no-gutters
-            justify="end"
+            class="justify-end compact-row"
+            density="compact"
           >
             <v-col cols="3">
               <CursorInfo />
             </v-col>
             <v-spacer />
             <v-col cols="3">
-              <v-row no-gutters>
+              <v-row
+                class="compact-row"
+                density="compact"
+              >
                 <AlarmList />
               </v-row>
-              <v-row no-gutters>
+              <v-row
+                class="compact-row"
+                density="compact"
+              >
                 <MessageList />
               </v-row>
             </v-col>
           </v-row>
           <v-row
-            no-gutters
-            justify="end"
+            density="compact"
+            class="justify-end compact-row"
           >
-            <v-spacer />
-            <v-col cols="10">
+            <v-col cols="9">
               <RangeBearing />
             </v-col>
+            <v-spacer />
             <v-col cols="2">
               <PowerControls @transmit-toggle="onTransmitToggle" />
             </v-col>
@@ -88,8 +93,7 @@
   >
     <v-container height="100%">
       <v-row
-        align="center"
-        justify="center"
+        class="align-center justify-center"
         style="height: 100%;"
       >
         <v-card>
@@ -155,10 +159,14 @@
 
 .radar-container {
   left: -400px;
-  top: -200px;
+  top: -180px;
 }
 
 .radar-row {
   height: 410px;
+}
+
+.compact-row {
+  margin: 0px;
 }
 </style>

@@ -1,9 +1,8 @@
 <template>
   <v-container class="pil-container fill-height w-100">
     <v-row
-      class="w-100"
-      justify="center"
-      no-gutters
+      class="w-100 justify-center margin-2px"
+      density="compact"
     >
       <v-spacer />
       <v-col cols="2">
@@ -13,9 +12,8 @@
       </v-col>
     </v-row>
     <v-row
-      class="w-100"
-      justify="center"
-      no-gutters
+      class="w-100 justify-center margin-2px"
+      density="compact"
     >
       <v-spacer />
       <v-col cols="2">
@@ -25,9 +23,8 @@
       </v-col>
     </v-row>
     <v-row
-      class="w-100"
-      justify="center"
-      no-gutters
+      class="w-100 justify-center margin-2px"
+      density="compact"
     >
       <v-spacer />
       <v-col cols="2">
@@ -64,5 +61,10 @@
 <style scoped>
 .pil-container {
   padding: 0px;
+}
+
+.margin-2px {
+  margin: 0px;
+  margin-bottom: 2px;
 }
 </style>

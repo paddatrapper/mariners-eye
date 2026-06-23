@@ -4,9 +4,9 @@
     height="100%"
     width="300px"
   >
-    <v-container>
+    <v-container class="target-container">
       <v-row>
-        <v-col>
+        <v-col cols="8">
           <v-row class="row-info">
             <StatusLabel>HDG</StatusLabel>
             <p class="label-info">
@@ -19,7 +19,7 @@
               {{ displayCourse() }}<br>{{ displaySpeed() }}
             </p>
           </v-row>
-          <v-row>
+          <v-row class="row-info">
             <StatusLabel class="position-status">
               POS
             </StatusLabel>
@@ -120,11 +120,13 @@
 
 <style scoped>
 .label-info {
+  margin: 0px;
   margin-left: 5px;
 }
 
 .row-info {
-  margin-bottom: 30px;
+  margin: 0px;
+  margin-bottom: 18px;
 }
 
 .position-status {
@@ -132,6 +134,12 @@
 }
 
 .btn-action {
-  margin-top: 18px;
+  margin: 0px;
+  margin-bottom: 2px;
+}
+
+.target-container {
+  padding-top: 2px;
+  padding-bottom: 2px;
 }
 </style>

@@ -1,28 +1,36 @@
 <template>
   <v-container>
-    <v-row no-gutters>
+    <v-row density="compact">
       <v-col cols="12">
         <h4>CURSOR</h4>
       </v-col>
     </v-row>
-    <v-row no-gutters>
+    <v-row density="compact">
       <v-col cols="12">
-        <p>{{ range }}</p>
+        <p class="margin-0px">
+          {{ range }}
+        </p>
       </v-col>
     </v-row>
-    <v-row no-gutters>
+    <v-row density="compact">
       <v-col cols="12">
-        <p>{{ bearing }}</p>
+        <p class="margin-0px">
+          {{ bearing }}
+        </p>
       </v-col>
     </v-row>
-    <v-row no-gutters>
+    <v-row density="compact">
       <v-col cols="12">
-        <p>{{ info3 }}</p>
+        <p class="margin-0px">
+          {{ info3 }}
+        </p>
       </v-col>
     </v-row>
-    <v-row no-gutters>
+    <v-row density="compact">
       <v-col cols="12">
-        <p>{{ info4 }}</p>
+        <p class="margin-0px">
+          {{ info4 }}
+        </p>
       </v-col>
     </v-row>
   </v-container>
@@ -48,3 +56,9 @@ const info4 = computed(() => {
 });
 
 </script>
+
+<style scoped>
+.margin-0px {
+  margin: 0px;
+}
+</style>

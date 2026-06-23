@@ -2,11 +2,13 @@
   <v-container class="container-ti">
     <v-row
       class="row-ti-title"
-      no-gutters
+      density="compact"
     >
-      <h4>TI</h4>
+      <h4 class="margin-0px">
+        TI
+      </h4>
     </v-row>
-    <v-row no-gutters>
+    <v-row density="compact">
       <v-col style="z-index: 1;">
         <v-slider
           class="slider-ti"
@@ -65,5 +67,9 @@
 .div-ti-color {
   height: 30%;
   width: 15px;
+}
+
+.v-row {
+  margin-top: 0px;
 }
 </style>

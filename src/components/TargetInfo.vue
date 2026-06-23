@@ -5,33 +5,46 @@
     width="300px"
   >
     <v-container>
-      <v-row class="row-target-info">
-        <v-col>
+      <v-row
+        class="row-target-info"
+        density="compact"
+      >
+        <v-col cols="3">
           <ToggleButton>RTE</ToggleButton>
         </v-col>
-        <v-col>
+        <v-col cols="3">
           <ToggleButton active>
             CAS
           </ToggleButton>
         </v-col>
-        <v-col>
+        <v-col cols="3">
           <ToggleButton active>
             AIS
           </ToggleButton>
         </v-col>
-        <v-col>
+        <v-col cols="3">
           <ToggleButton>DF</ToggleButton>
         </v-col>
       </v-row>
-      <v-row class="row-target-info">
+      <v-row
+        class="row-target-info"
+        density="compact"
+      >
         <v-col>
-          <p>VECTOR</p>
+          <p class="margin-0px">
+            VECTOR
+          </p>
         </v-col>
         <v-col>
-          <p>TRAILS</p>
+          <p class="margin-0px">
+            TRAILS
+          </p>
         </v-col>
       </v-row>
-      <v-row class="row-target-info">
+      <v-row
+        class="row-target-info"
+        density="compact"
+      >
         <v-col>
           <v-row>
             <v-col>
@@ -40,7 +53,9 @@
               </ToggleButton>
             </v-col>
             <v-col class="target-display-unit">
-              <p>m</p>
+              <p class="margin-0px">
+                m
+              </p>
             </v-col>
           </v-row>
         </v-col>
@@ -52,7 +67,9 @@
               </ToggleButton>
             </v-col>
             <v-col class="target-display-unit">
-              <p>m</p>
+              <p class="margin-0px">
+                m
+              </p>
             </v-col>
           </v-row>
         </v-col>
@@ -65,10 +82,15 @@
     width="300px"
   >
     <v-container>
-      <v-row justify="center">
-        <h4>ARPA INFO</h4>
+      <v-row
+        class="justify-center"
+        density="compact"
+      >
+        <h4 class="margin-0px">
+          ARPA INFO
+        </h4>
       </v-row>
-      <v-row>
+      <v-row density="compact">
         <!-- eslint-disable vue/no-v-html -->
         <table
           class="target-table"
@@ -166,7 +188,14 @@
 }
 
 .row-target-info > .v-col {
-  padding: 5px;
   width: 63px;
+}
+
+.row-target-info {
+  margin-top: 4px;
+}
+
+.margin-0px {
+  margin: 0px;
 }
 </style>
