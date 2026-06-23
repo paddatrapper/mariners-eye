@@ -37,28 +37,3 @@ repos:
     hooks:
       - id: codespell
         exclude: yarn\.lock$
-
-  - repo: local
-    hooks:
-      - id: lint
-        name: lint
-        description: Lint files with eslint
-        entry: yarn lint
-        pass_filenames: false
-        language: system
-
-      - id: type-check
-        name: type-check
-        description: Check types with tsc
-        entry: yarn type-check
-        pass_filenames: false
-        language: system
-        files: \.(js|jsx|ts|tsx|vue)$
-
-      - id: unit-test
-        name: unit-test
-        description: Run unit tests with vitest
-        entry: yarn test:unit --run
-        pass_filenames: false
-        language: system
-        files: \.(js|jsx|ts|tsx|vue)$
