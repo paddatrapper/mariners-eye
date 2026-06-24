@@ -8,7 +8,6 @@ WORKDIR /build
 RUN npm install -g corepack && corepack enable
 
 COPY .yarnrc.yml package.json yarn.lock .
-COPY .yarn ./.yarn
 RUN --mount=type=cache,target=/root/.cache/yarn \
     YARN_CACHE_FOLDER=/root/.cache/yarn yarn install
 
