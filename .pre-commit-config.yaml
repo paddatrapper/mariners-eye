@@ -36,4 +36,4 @@ repos:
     rev: v2.3.0
     hooks:
       - id: codespell
-        exclude: yarn\.lock$
+        exclude: (yarn\.lock|\.yarn/.*)$
